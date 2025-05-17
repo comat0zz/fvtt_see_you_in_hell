@@ -1,0 +1,60 @@
+{
+  "id": "see-you-in-hell",
+  "title": "Встретимся в ADU",
+  "description": "Брутальный нарративный боевик о крутых парнях, которые останавливают инфернальное вторжение. Игра от команды Silver Hoof Games",
+  "version": "2.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Nikita Belov",
+      "email": "comAT0Zz@gmail.com",
+      "flags": {}
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "hero": { "htmlFields": ["description"] }
+    },
+    "Item": {
+      "card": { "htmlFields": ["description"] }
+    }
+  },
+  "esmodules": [
+    "module/index.mjs"
+  ],
+  "styles": [
+    "styles/index.css"
+  ],
+  "packs": [
+    {
+      "name": "cards",
+      "label": "Карточки заданий",
+      "system": "see-you-in-hell",
+      "path": "packs/cards.db",
+      "type": "Item",
+      "private": false,
+      "flags": {},
+      "ownership": {
+          "PLAYER": "OBSERVER",
+          "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "languages": [
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json",
+      "flags": {}
+    }
+  ],
+  "socket": true,
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "url": "https://github.com/comat0zz/fvtt_see_you_in_hell",
+  "manifest": "",
+  "download": ""
+}

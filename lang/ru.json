@@ -1,7 +1,6 @@
 {
   "ACTOR": {
-    "TypeHero": "Герой",
-    "TypeEnemy": "Противник"
+    "TypeHero": "Герой"
   },
 
   "ITEM": {
@@ -100,10 +99,6 @@
     "Item": {
       "NamePlaceholder": "Введите название",
       "Name": "Название",
-
-      "Equipment": {
-        
-      },
       "Cards": {
         "Description": "Введите детали задания",
         "Gets": "Выдать задание",
