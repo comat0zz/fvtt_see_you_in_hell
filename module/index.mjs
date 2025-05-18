@@ -34,21 +34,21 @@ Hooks.once("init", async function() {
 
   CONFIG.Item.documentClass = documents.SystemItem;
   CONFIG.Item.dataModels = {
-    cards: models.Item
+    card: models.Item
   }
 
   foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
   foundry.documents.collections.Actors.registerSheet(SYSTEM.id, applications.SystemActorSheet, { 
     types: ["hero"], 
     makeDefault: true,
-    label: "TYPES.Actor.Hero"
+    label: "TYPES.Actor.hero"
   });
 
   foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet)
   foundry.documents.collections.Items.registerSheet(SYSTEM.id, applications.SystemItemSheet, { 
-    types: ["cards"], 
+    types: ["card"], 
     makeDefault: true,
-    label: "TYPES.ITEM.cards"
+    label: "TYPES.Item.card"
   })
 
   // Activate socket handler

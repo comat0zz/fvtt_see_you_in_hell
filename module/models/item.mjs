@@ -5,7 +5,7 @@ export default class Item extends foundry.abstract.TypeDataModel {
         const requiredInteger = { required: true, nullable: false, integer: true };
         const schema = {};
 
-        schema.description = new fields.HTMLField({ required: true, textSearch: true });
+        schema.description = new fields.StringField({ required: false, nullable: false, initial: "" });
         
         schema.formula = new fields.SchemaField({
             value: new fields.StringField({ required: false, nullable: false, initial: "" })

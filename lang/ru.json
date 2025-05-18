@@ -1,13 +1,12 @@
 {
-  "ACTOR": {
-    "TypeHero": "Герой"
+  "TYPES": {
+    "Actor": {
+      "hero": "Герой"
+    },
+    "Item": {
+      "card": "Карта заданий"
+    }
   },
-
-  "ITEM": {
-    "TypeEquipment": "Элемент",
-    "TypeCards": "Карта заданий"
-  },
-
   "CZT": {
     
     "Common": {

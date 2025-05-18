@@ -1,13 +1,13 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
-    {{#ife cssClass 'locked'}}
-    <span class="fs18">{{item.name}}</span>
-    {{else}}
-    <input name="name" type="text" class="fs18" value="{{item.name}}" placeholder="{{localize 'CZT.Item.NamePlaceholder'}}" />
-    {{/ife}}
+    {{formInput fields.name value=source.name}}
   </header>
 
   <section class="sheet-body">
-    <input name="system.description" value="{{item.system.description}}" placeholder="{{localize "CZT.Item.Cards.Description"}}" />
+     {{formField 
+       systemFields.description
+       value=system.description
+       name="system.description"
+     }}
   </section>
 </form>

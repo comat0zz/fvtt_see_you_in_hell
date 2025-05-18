@@ -19,7 +19,7 @@
       "hero": { "htmlFields": ["description"] }
     },
     "Item": {
-      "card": { "htmlFields": ["description"] }
+      "card": {}
     }
   },
   "esmodules": [

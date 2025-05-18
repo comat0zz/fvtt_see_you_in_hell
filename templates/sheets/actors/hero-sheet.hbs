@@ -1,157 +1,38 @@
 <form class="{{cssClass}}" autocomplete="off">
-{{!-- Sheet Header --}}
 <div class="actor-wrapper">
-  <div class="actor-row for-logo-line"></div>
+    <div class="actor-row for-logo-line"></div>
 
-  <div class="actor-row">
-    <div class="actor-column actor-avatar">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-    </div>
-    <div class="actor-column">
-      <div class="actor-row">
-        <div class="actor-column actor-table-label padding-top-12">{{localize "CZT.Actor.Name"}}</div>
-        <div class="actor-column actor-name-block">
-          <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "CZT.Actor.NamePlaceholder"}}" />
-        </div>
-      </div>
-      <div class="actor-row" title="{{localize "CZT.Actor.ConceptHelp"}}">
-        <div class="actor-column actor-table-label padding-top-12">{{localize "CZT.Actor.Concept"}}</div>
-        <div class="actor-column actor-name-block actor-block-icon"><i class="fa-solid fa-recycle"></i></div>
-        <div class="actor-column actor-name-block">
-          <input name="system.concept" type="text" value="{{systemData.concept}}" placeholder="" />
-        </div>
-      </div>
-      <div class="actor-row" title="{{localize "CZT.Actor.MyItemHelp"}}">
-        <div class="actor-column actor-table-label padding-top-5">{{localize "CZT.Actor.MyItem"}}</div>
-        <div class="actor-column actor-name-block actor-block-icon"><i class="fa-solid fa-square-plus"></i></div>
-        <div class="actor-column actor-name-block">
-          <input name="system.myitem" type="text" value="{{systemData.myitem}}" placeholder="" />
-        </div>
-      </div>
-    </div>
-    <div class="actor-column actor-stat-block">
-      <div class="actor-row text-align-center">
-        <div class="actor-column">{{localize "CZT.Actor.Wounds"}}</div>
-      </div>
-      <div class="actor-row text-align-center">
-        <div class="actor-column actor-fury-triangle">
-          <i class="fa-solid fa-triangle{{#if systemData.wounds.w1}} isWound{{/if}}" wound-name="w1"></i>
-        </div>
-        <div class="actor-column actor-fury-triangle">
-          <i class="fa-solid fa-triangle{{#if systemData.wounds.w2}} isWound{{/if}}" wound-name="w2"></i>
-        </div>
-        <div class="actor-column actor-fury-triangle">
-          <i class="fa-solid fa-triangle{{#if systemData.wounds.w3}} isWound{{/if}}" wound-name="w3"></i>
-        </div>
-        <div class="actor-column actor-fury-triangle">
-          <i class="fa-solid fa-triangle{{#if systemData.wounds.w4}} isWound{{/if}}" wound-name="w4"></i>
-        </div>
-        <div class="actor-column actor-fury-triangle">
-          <i class="fa-solid fa-triangle{{#if systemData.wounds.w5}} isWound{{/if}}" wound-name="w5"></i>
-        </div>
-      </div>
+    <!-- Блок с авкой, именем и спец. абилками -->
+    <div class="actor-row">
 
-      <div class="actor-row text-align-center">
-        <div class="actor-column">{{localize "CZT.Actor.Fury"}}</div>
-      </div>
-      <div class="actor-row text-align-center">
-        <div class="actor-column block-hor-min">
-          <input type="text" name="system.fury" value="{{systemData.fury}}" data-type="number" />
-        </div>
-      </div>
     </div>
-  </div>
 
-  <table class="Approaches">
-    <tr>
-      <td colspan="7"></td>
-      <td class="table-equipment-caption">{{localize "CZT.Actor.Inventory.itEquips"}}</td>
-    </tr>
-    <tr>
-      <td rowspan="3" class="get-card" title="{{localize "CZT.Item.Cards.Gets"}}"><i class="fa-solid fa-arrow-down-to-square"></i></td>
-      <td rowspan="3">
-        <div class="actor-block-icon actor-block-sys">
-          <i class="fa-solid fa-square-plus"></i>
-        </div>
-      </td>
-      <td rowspan="3" class="aprt-left">&nbsp;</td>
-      <td class="table-115px table-align-right{{#ife systemData.approaches.BloodthirstyColdBlooded "1"}} border-round-true2{{/ife}}">
-        <span class="roll-approach" appr-id="BloodthirstyColdBlooded" appr-val="1">{{localize "CZT.Actor.Approaches.Bloodthirsty"}}&nbsp;</span>
-        <input type="radio" name="system.approaches.BloodthirstyColdBlooded" value="1"{{#ife systemData.approaches.BloodthirstyColdBlooded "1"}} checked="checked"{{/ife}} />
-      </td>
-      <td class="table-rombs"><i class="fa-solid fa-rhombus approaches-rombs"></i></td>
-      <td class="table-130px{{#ife systemData.approaches.BloodthirstyColdBlooded "2"}} border-round-true{{/ife}}">
-        <input type="radio" name="system.approaches.BloodthirstyColdBlooded" value="2"{{#ife systemData.approaches.BloodthirstyColdBlooded "2"}} checked="checked"{{/ife}} />&nbsp;
-        <span class="roll-approach" appr-id="BloodthirstyColdBlooded" appr-val="2">{{localize "CZT.Actor.Approaches.ColdBlooded"}}</span>        
-      </td>
-      <td rowspan="3" class="aprt-right">&nbsp;</td>
-      <td rowspan="3" class="table-equipment">
-        <ul>
-          {{#each isEquip as |item key|}}
-            <li item-id="{{item.id}}" item-type="{{item.type}}">
-               {{item.name}}<!-- <span class="element-img"><img src="{{item.img}}"></span>--> <i class="fa-solid fa-trash sheet-item-del"></i>
-            </li>
-          {{/each}}
+    <!-- Карты заданий -->
+    <div class="actor-row">
+
+    </div>
+
+    <!-- Блок помощи -->
+    <div class="actor-row actor-help">
+        <div class="actor-column-50">
+        {{{localize "CZT.Actor.Helps.Left.l1"}}}:
+        <ul class="red-li">
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l2"}}}</li>
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l3"}}}</li>
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l4"}}}</li>
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l5"}}}</li>
         </ul>
-      </td>
-    </tr>
-    <tr>
-      <td class="table-align-right table-115px{{#ife systemData.approaches.ElusiveImpenetrable "1"}} border-round-true2{{/ife}}">
-        <span class="roll-approach" appr-id="ElusiveImpenetrable" appr-val="1">{{localize "CZT.Actor.Approaches.Elusive"}}&nbsp;</span>
-        <input type="radio" name="system.approaches.ElusiveImpenetrable" value="1"{{#ife systemData.approaches.ElusiveImpenetrable "1"}} checked="checked"{{/ife}} />
-      </td>
-      <td class="table-rombs"><i class="fa-solid fa-rhombus approaches-rombs"></i></td>
-      <td class="table-130px {{#ife systemData.approaches.ElusiveImpenetrable "2"}}border-round-true{{/ife}}">
-        <input type="radio" name="system.approaches.ElusiveImpenetrable" value="2"{{#ife systemData.approaches.ElusiveImpenetrable "2"}} checked="checked"{{/ife}} />&nbsp;  
-        <span class="roll-approach" appr-id="ElusiveImpenetrable" appr-val="2">{{localize "CZT.Actor.Approaches.Impenetrable"}}</span>        
-      </td>
-    </tr>
-    <tr>
-      <td class="table-align-right table-115px{{#ife systemData.approaches.ConfidentCalculating "1"}} border-round-true2{{/ife}}">
-        <span class="roll-approach" appr-id="ConfidentCalculating" appr-val="1">{{localize "CZT.Actor.Approaches.Confident"}}&nbsp;</span>
-        <input type="radio" name="system.approaches.ConfidentCalculating" value="1"{{#ife systemData.approaches.ConfidentCalculating "1"}} checked="checked"{{/ife}} />
-      </td>
-      <td class="table-rombs"><i class="fa-solid fa-rhombus approaches-rombs"></i></td>
-      <td class="table-130px {{#ife systemData.approaches.ConfidentCalculating "2"}}border-round-true{{/ife}}">
-        <input type="radio" name="system.approaches.ConfidentCalculating" value="2"{{#ife systemData.approaches.ConfidentCalculating "2"}} checked="checked"{{/ife}} />&nbsp;  
-        <span class="roll-approach" appr-id="ConfidentCalculating" appr-val="2">{{localize "CZT.Actor.Approaches.Calculating"}}</span>
-      </td>
-    </tr>
-  </table>
-
-  <div class="actor-row actor-card-list">
-    <div class="actor-column">
-      <ul class="cards-list">
-        {{#each isCards as |item key|}}
-          <li class="card-item {{#if item.success}} success{{/if}}" data-id="{{item.id}}" data-type="{{item.type}}">
-            <div class="card-name">{{item.name}}</div>
-            <div class="card-desc">{{item.description}}</div>
-          </li>
-        {{/each}}
-      </ul>
+        </div>
+        <div class="actor-column-50">
+        {{{localize "CZT.Actor.Helps.Right.l1"}}}:
+        <ul class="red-li">
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Right.l2"}}}</li>
+            <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Right.l3"}}}</li>
+        </ul>
+        {{{localize "CZT.Actor.Helps.Right.l4"}}}<br><br>
+        {{{localize "CZT.Actor.Helps.Right.l5"}}}<br>
+        {{{localize "CZT.Actor.Helps.Right.l6"}}}
+        </div>
     </div>
-  </div>
-
-  <div class="actor-row actor-help">
-    <div class="actor-column-50">
-      {{{localize "CZT.Actor.Helps.Left.l1"}}}:
-      <ul class="red-li">
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l2"}}}</li>
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l3"}}}</li>
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l4"}}}</li>
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Left.l5"}}}</li>
-      </ul>
-    </div>
-    <div class="actor-column-50">
-      {{{localize "CZT.Actor.Helps.Right.l1"}}}:
-      <ul class="red-li">
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Right.l2"}}}</li>
-        <li><i class="fa-solid fa-triangle red-li-p"></i>&nbsp;{{{localize "CZT.Actor.Helps.Right.l3"}}}</li>
-      </ul>
-      {{{localize "CZT.Actor.Helps.Right.l4"}}}<br><br>
-      {{{localize "CZT.Actor.Helps.Right.l5"}}}<br>
-      {{{localize "CZT.Actor.Helps.Right.l6"}}}
-    </div>
-  </div>
 </div>
 </form>

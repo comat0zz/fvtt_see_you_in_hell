@@ -77,7 +77,6 @@ export default class SystemItemSheet extends api.HandlebarsApplicationMixin(shee
             item: this.document,
             system: this.document.system,
             source: this.document.toObject(),
-            enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.document.system.description, { async: true }),
             isEditMode: this.isEditMode,
             isPlayMode: this.isPlayMode,
             isEditable: this.isEditable
@@ -89,7 +88,7 @@ export default class SystemItemSheet extends api.HandlebarsApplicationMixin(shee
 
     /** @override */
     _onRender(context, options) {
-        //super._onRender((context, options))
+        super._onRender((context, options))
 
     }
 
